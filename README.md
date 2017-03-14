@@ -11,9 +11,9 @@ NativeScript Calendar Week View provides week view and day view.It allow creatin
 - [ ] Async Event
 - [ ] Gesture Events
 
-## Screenshots
+## Demo Run
 
-![](screenshots/Screen Shot 2017-03-14 at 9.03.12 pm.png)
+![alt text](screenshots/weekview.gif)
 
 #### Native Libraries: 
 Android | 
@@ -131,3 +131,4 @@ Attribute to specify the background color of column headers in weekview.
 ## Methods
 
 **addEvent()** - Add Event with necessary Parameters passed and rendered in calendar*
+
