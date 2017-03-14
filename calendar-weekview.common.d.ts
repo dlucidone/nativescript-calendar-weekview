@@ -1,0 +1,30 @@
+import { View } from "ui/core/view";
+import { Property } from "ui/core/dependency-observable";
+export declare class CalendarWeekView extends View {
+    static eventTextColorProperty: Property;
+    static textSizeProperty: Property;
+    static hourHeightProperty: Property;
+    static headerColumnPaddingProperty: Property;
+    static headerColumnTextColorProperty: Property;
+    static headerRowPaddingProperty: Property;
+    static columnGapProperty: Property;
+    static noOfVisibleDaysProperty: Property;
+    static headerRowBackgroundColorProperty: Property;
+    static dayBackgroundColorProperty: Property;
+    static todayBackgroundColorProperty: Property;
+    static headerColumnBackgroundProperty: Property;
+    constructor();
+    eventTextColor: string;
+    textSize: any;
+    hourHeight: any;
+    headerColumnPadding: any;
+    headerColumnTextColor: string;
+    headerRowPadding: any;
+    columnGap: any;
+    noOfVisibleDays: number;
+    headerRowBackgroundColor: string;
+    dayBackgroundColor: string;
+    todayBackgroundColor: string;
+    headerColumnBackground: string;
+    addEvent(id: any, name: any, startYear: any, startMonth: any, startDay: any, startHour: any, startMinute: any, endYear: any, endMonth: any, endDay: any, endHour: any, endMinute: any, eventColor: any): any;
+}

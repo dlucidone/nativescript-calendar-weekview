@@ -1,0 +1,9 @@
+<ActionBar title="Nativescript-Calendar-WeekView"  style="background-color:#ED2831; color:white">
+    <ActionItem  (tap)="addEvent()">
+        <Label class="actionItemLabel" text="Add" color="white" ></Label>
+    </ActionItem>
+</ActionBar>
+<StackLayout>
+    <CalendarWeekView #CalendarWeekView  headerColumnBackground="#ffffff" todayBackgroundColor="#1848adff" noOfVisibleDays="3"  dayBackgroundColor="#05000000" headerRowBackgroundColor="#ffefefef" columnGap="30" headerColumnTextColor="#8f000000" headerRowPadding="30" headerColumnPadding="30" hourHeight="120" textSize="30" >
+    </CalendarWeekView>
+</StackLayout>

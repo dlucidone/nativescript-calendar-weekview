@@ -1,0 +1,11 @@
+android {
+    productFlavors {
+        "nativescriptcalendarweekview" {
+            dimension "nativescriptcalendarweekview"
+        }
+    }
+}
+
+dependencies {
+     compile "com.github.alamkanak:android-week-view:1.2.6"
+}
