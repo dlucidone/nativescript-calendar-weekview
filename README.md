@@ -13,9 +13,7 @@ NativeScript Calendar Week View provides week view and day view.It allow creatin
 
 ## Screenshots
 
-Android |  
--------- | 
-![Sample1](screenshots/Screen Shot 2017-03-14 at 9.04.17 pm.png) ![Sample2](screenshots/Screen Shot 2017-03-14 at 9.03.12 pm.png)
+![](screenshots/Screen Shot 2017-03-14 at 9.03.12 pm.png)
 
 #### Native Libraries: 
 Android | 
