@@ -1,95 +1,135 @@
-# Develop a NativeScript plugin now (w/ TypeScript)
 
-## Getting started
+# NativeScript-Calendar-WeekView :calendar:
+NativeScript Calendar Week View provides week view and day view.It allow creating events and viewing them in week view.The plugin is highly under construction so any feedbacks and PRs are most Welcome.
 
-1. `git clone https://github.com/NathanWalker/nativescript-plugin-seed.git myplugin`
-2. `cd myplugin`
-3. `npm run postclone`
-4. `npm run setup`
-5. Get to work.
+### Under Construction
 
-This seed expands on several things [presented here](http://developer.telerik.com/featured/creating-nativescript-plugins-in-typescript/).
+- [x] Plugin Setup
+- [x] WeekView with Properties Enabled
+- [x] Adding of Event 
+- [ ] Delete Event 
+- [ ] Async Event
+- [ ] Gesture Events
+
+## Screenshots
+
+Android |  
+-------- | 
+![Sample1](screenshots/Screen Shot 2017-03-14 at 9.04.17 pm.png) ![Sample2](screenshots/Screen Shot 2017-03-14 at 9.03.12 pm.png)
+
+#### Native Libraries: 
+Android | 
+---------- | 
+[alamkanak/Android-Week-View](https://github.com/alamkanak/Android-Week-View) 
+
+## Installation
+From your command prompt/termial go to your app's root folder and execute:
+
+`tns plugin add nativescript-calendar-weekview`
 
 ## Usage
-
-The seed is prepared to allow you to test and try out your plugin via the `demo` folder.
-Additionally it provides a proper `.gitignore` to keep GitHub tidy as well as `.npmignore` to ensure everyone is happy when you publish your plugin via npm.
-
-### Linking to CocoaPod or Android Arsenal plugins
-
-You will want to create these folders and files in the root:
-
-```
-platforms --
-  ios --
-    Podfile
-  android --
-    include.gradle
+#### XML:
+```XML
+<Page  xmlns="http://schemas.nativescript.org/tns.xsd" 
+    xmlns:CalendarWeekView="nativescript-calendar-weekview" loaded="pageLoaded" class="page">
+    <ActionBar title="NativeScript-Calendar-WeekView" />
+    <ScrollView>
+         <StackLayout>
+   <CalendarWeekView:CalendarWeekView headerColumnBackground="#ffffff" todayBackgroundColor="#1848adff" noOfVisibleDays="3"  dayBackgroundColor="#05000000" headerRowBackgroundColor="#ffefefef" columnGap="30" headerColumnTextColor="#8f000000" headerRowPadding="30" headerColumnPadding="30" hourHeight="120" textSize="30" />
+    </StackLayout>
+    </ScrollView>
+</Page>
 ```
 
-Doing so will open up those native apis to your plugin :)
+### TS:
+```TS
 
-Take a look at these existing plugins for how that can be done very simply:
-
-* [nativescript-cardview](https://github.com/bradmartin/nativescript-cardview/tree/master/platforms)
-* [nativescript-floatingactionbutton](https://github.com/bradmartin/nativescript-floatingactionbutton/tree/master/platforms)
-
-### Typical development workflow:
-
-1. Make changes to plugin files
-2. Make changes in `demo` that would test those changes out
-3. `npm run demo.ios` or `npm run demo.android`  **(must be run from the root directory)**
-
-Those `demo` tasks are just general helpers. You may want to have more granular control on the device and/or emulator you want to run. For that, you can just run things the manual way:
+import {CalendarWeekView} from 'nativescript-calendar-weekview';
+public CalendarWeekView: CalendarWeekView;
 
 ```
-cd demo
 
-// when developing, to ensure the latest code is built into the demo, it's a guarantee to remove the plugin and add it back
-tns plugin remove nativescript-calendar-weekview
-tns plugin add ..
+## Angular + Typescript:
+```javascript
+import {Component, ElementRef, ViewChild} from '@angular/core';
+import {registerElement} from "nativescript-angular/element-registry";
 
-// manual platform adds
-tns platform add ios
-// and/or
-tns platform add android
+registerElement("CalendarWeekView", () => require("nativescript-calendar-weekview").CalendarWeekView);
+
+@Component({
+    selector: 'calendar-weekview-example',
+    template: `
+        <StackLayout>
+        <CalendarWeekView #CalendarWeekView  headerColumnBackground="#ffffff" todayBackgroundColor="#1848adff" noOfVisibleDays="3"  dayBackgroundColor="#05000000" headerRowBackgroundColor="#ffefefef" columnGap="30" headerColumnTextColor="#8f000000" headerRowPadding="30" headerColumnPadding="30" hourHeight="120" textSize="30" >
+    </CalendarWeekView>
+        </StackLayout>
+    
+    `
+})
+export class CalendarViewExample {
+
+     @ViewChild("CalendarWeekView") CalendarWeekView: ElementRef;
+
+      addEvent() {
+        let event = this.CalendarWeekView.nativeElement;
+        // provide params in this order
+        // addEvent(id,name,startYear, startMonth, startDay,startHour,startMinute,endYear,endMonth, endDay, endHour,endMinute,eventColor)
+        event.addEvent(1, "first Event", 2017, 3, 14, 3, 3, 2017, 3, 14, 7, 5, "#87d288");
+        event.addEvent(2, "Second Event", 2017, 3, 15, 5, 3, 2017, 3, 15, 7, 5, "#59DBE0");
+        event.addEvent(3, "Third Event", 2017, 3, 14, 8, 3, 2017, 3, 14, 10, 5, "#F66C4E");
+
+    }
+    }
+
+}
 ```
 
-Then use any of the available options from the `tns` command line:
 
-* [Emulate your project](https://github.com/NativeScript/nativescript-cli#emulate-your-project)
-* [Run your project](https://github.com/NativeScript/nativescript-cli#run-your-project)
-* [Full list of commands](https://github.com/NativeScript/nativescript-cli#the-commands)
+## Attributes
+**textSize - (int)** - *optional*
 
-## Unittesting
-This plugin automatically adds Jasmine-based unittest support to your plugin.
-Open `demo/app/tests/tests.js` and adjust its contents.
+Attribute to specify the size of text in weekview.
 
-You can read more about this topic [here](https://docs.nativescript.org/tooling/testing).
+**hourHeight - (int)** - *optional*
 
-Once you're ready to test your plugin's API execute one of these commands in the plugin root:
+Attribute to specify the size of text in weekview.
 
-```
-npm run test.ios
-npm run test.android
-```
+**headerColumnPadding - (int)** - *optional*
 
-## Publish
+Attribute to specify the padding between header columns in weekview.
 
-When you have everything ready to publish:
+**headerRowPadding - (int)** - *optional*
 
-* Bump the version number in `package.json`
-* `npm run build` - **very important** - ensure the latest is built **before** you publish
-* `npm publish`
+Attribute to specify the padding between header rows in weekview.
 
-## Contributing - Want to make the seed better?
+**headerColumnTextColor - (color string)** - *optional*
 
-Or at least help keep it up to date with NativeScript releases, which would be excellent.
+Attribute to specify the text color of column headers in weekview.
 
-```
-npm install -g typescript  // if you don't already have it
-git clone https://github.com/NathanWalker/nativescript-plugin-seed
-cd nativescript-plugin-seed
+**columnGap - (int)** - *optional*
 
-// Improve!
-```
+Attribute to specify the gap between columns in weekview.
+
+**headerRowBackgroundColor - (color string)** - *optional*
+
+Attribute to specify the background color of header rows in weekview.
+
+**dayBackgroundColor - (color string)** - *optional*
+
+Attribute to specify the color of day i.e. not today in weekview.
+ 
+**noOfVisibleDays - (int)** - *optional*
+
+Attribute to specify the visibility of days (i.e.1,3,7 days) in weekview.
+
+**todayBackgroundColor - (color string)** - *optional*
+
+Attribute to specify the color of today bacground in weekview.
+
+**headerColumnBackground - (color string)** - *optional*
+
+Attribute to specify the background color of column headers in weekview.
+
+## Methods
+
+**addEvent()** - Add Event with necessary Parameters passed and rendered in calendar*
