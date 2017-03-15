@@ -23,7 +23,7 @@ Android |
 ## Installation
 From your command prompt/termial go to your app's root folder and execute:
 
-`tns plugin add nativescript-calendar-weekview`
+`npm i nativescript-calendar-weekview --save`
 
 ## Usage
 #### XML:
