@@ -135,5 +135,7 @@ Attribute to specify the background color of column headers in weekview.
 
 ## Methods
 
-**addEvent()** - Add Event with necessary Parameters passed and rendered in calendar*
+**addEvent ( id, name, startYear, startMonth, startDay, startHour, startMinute, endYear, endMonth, endDay, endHour, endMinute, eventColor )**
+
+Add Event with necessary Parameters passed and rendered in calendar.
 
