@@ -1,6 +1,6 @@
 {
   "name": "nativescript-calendar-weekview",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Nativescript Calendar WeekView allow adding events to weekview and styling them.",
   "main": "calendar-weekview",
   "typings": "index.d.ts",
@@ -30,11 +30,17 @@
     "NativeScript",
     "JavaScript",
     "Android",
-    "iOS"
+    "iOS",
+    "Calendar",
+    "Events",
+    "Event",
+    "WeekView",
+    "Week"
+
   ],
   "author": {
-    "name": "Your Name",
-    "email": "youremail@yourdomain.com"
+    "name": "Ravindra Mishra",
+    "email": "jackravi227@gmail.com"
   },
   "bugs": {
     "url": "https://github.com/dlucidone/nativescript-calendar-weekview/issues"
