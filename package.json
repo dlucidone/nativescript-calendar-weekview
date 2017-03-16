@@ -1,6 +1,6 @@
 {
   "name": "nativescript-calendar-weekview",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Nativescript Calendar WeekView allow adding events to weekview and styling them.",
   "main": "calendar-weekview",
   "typings": "index.d.ts",
