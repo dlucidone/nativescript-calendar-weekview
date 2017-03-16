@@ -1,4 +1,4 @@
-*.js
+*.ts
 *.js.map
 *.log
 !scripts/*.js
