@@ -1,3 +1,6 @@
+[![npm](https://img.shields.io/npm/v/nativescript-calendar-weekview.svg)](https://www.npmjs.com/package/nativescript-calendar-weekview)
+[![npm](https://img.shields.io/npm/l/nativescript-calendar-weekview.svg)](https://www.npmjs.com/package/nativescript-calendar-weekview)
+[![npm](https://img.shields.io/npm/dt/nativescript-calendar-weekview.svg?label=npm%20d%2fls)](https://www.npmjs.com/package/nativescript-calendar-weekview)
 
 # NativeScript-Calendar-WeekView :calendar:
 NativeScript Calendar Week View provides week view and day view.It allow creating events and viewing them in week view.The plugin is highly under construction so any feedbacks and PRs are most Welcome.
