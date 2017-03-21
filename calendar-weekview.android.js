@@ -100,9 +100,7 @@ common.CalendarWeekView.dayBackgroundColorProperty.metadata.onSetNativeValue = d
 common.CalendarWeekView.todayBackgroundColorProperty.metadata.onSetNativeValue = todayBackgroundColorPropertyChanged;
 common.CalendarWeekView.headerColumnBackgroundProperty.metadata.onSetNativeValue = headerColumnBackgroundPropertyChanged;
 global.moduleMerge(common, exports);
-var monthView1 = com.alamkanak.weekview.MonthLoader;
 var WeekView = com.alamkanak.weekview.WeekView;
-var packageObj = com.alamkanak.weekview;
 var CalendarWeekView = (function (_super) {
     __extends(CalendarWeekView, _super);
     function CalendarWeekView() {
@@ -139,13 +137,13 @@ var CalendarWeekView = (function (_super) {
             }
         }));
         this._android.setEventLongPressListener(new com.alamkanak.weekview.WeekView.EventLongPressListener({
-            onEventClick: function (event, eventRect) {
-                console.log("in set on EventClickListener");
+            onEventLongPress: function (event, eventRect) {
+                console.log("in set on EventLongPressListener");
             }
         }));
         this._android.setEmptyViewLongPressListener(new com.alamkanak.weekview.WeekView.EmptyViewLongPressListener({
-            onEventClick: function (event, eventRect) {
-                console.log("in set on EventClickListener");
+            onEmptyViewLongPress: function (time) {
+                console.log("in set on setEmptyViewLongPressListener");
             }
         }));
         if (this.eventTextColor) {
